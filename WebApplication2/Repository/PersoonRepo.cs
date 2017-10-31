@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MVCRepo.Repository;
+using MVCRepo.Models;
 
 namespace MVCRepo.Repository
 {
     public class PersoonRepo
     {
-        IPersoonContext pc = new PersoonSQLContext();
-
-        internal string PersoonsNaam ()
+        public PersoonModel laad(int bsn)
         {
-            //throw new NotImplementedException();
-            return "";
+            // return persoonCtxt.laadPersoon(bsn);
+            return null;
         }
 
-        internal void ZetPersoonsNaam(string naam)
-        {
-            //throw new NotImplementedException();
-            naam = "Piet";
+        public void slaOp(PersoonModel persoon)
+        {           
+           
         }
     }
 }

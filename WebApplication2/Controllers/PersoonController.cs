@@ -13,15 +13,22 @@ namespace MVCRepo.Controllers
         // GET: Persoon
         public ActionResult Index()
         {
-            PersoonModel persoon = new PersoonModel();
-            persoon.Naam = "Pietje";
+            PersoonRepo persoon = new PersoonRepo();
+            PersoonModel pm = persoon.laad(1712556789);
 
-            return View(persoon);
+            return View(pm);
         }
         
-        public ActionResult Save(PersoonModel persoon)
+        public ActionResult Save(PersoonModel newPersoon)
         {
-            return View("Index", persoon);
+            ModelState.Clear();
+
+            newPersoon.BSN = 1712556700;
+
+            PersoonRepo persoonOpslag = new PersoonRepo();
+            persoonOpslag.slaOp(newPersoon);
+
+            return View("Index", newPersoon);
         }
     }
 }

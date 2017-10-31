@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCRepo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace MVCRepo.Repository
 {
     interface IPersoonContext
     {
-        void AddPerson();
-        void GetFirstPerson();
+        void slaOp(PersoonModel persoon);
+
+        PersoonModel laadPersoon(int id);
     }
 }
