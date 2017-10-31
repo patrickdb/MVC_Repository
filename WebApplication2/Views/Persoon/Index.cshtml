@@ -1,0 +1,12 @@
+﻿@model WebApplication2.Models.PersoonModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Save", "Persoon"))
+{
+  @Html.TextBoxFor(model => model.Naam)
+
+   <input type="submit" name="btnSubmit" value="Opslaan"/>
+}
